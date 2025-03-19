@@ -13,8 +13,16 @@
 // Agregar un botón que permita reiniciar el sorteo.
 let amigos = [];
 
+document.getElementById("amigo").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    agregarAmigo();
+  }
+});
+
 function agregarAmigo() {
   let input = document.getElementById("amigo");
+
   let nombre = input.value.trim(); // Elimina los espacios en blanco al inicio y al final
 
   if (nombre === "") {
@@ -42,4 +50,25 @@ function actualizarListaAmigos() {
     li.textContent = nombre;
     lista.appendChild(li);
   });
+}
+
+function sortearAmigo() {
+  if (amigos.length === 0) {
+    alert("¡No hay amigos en la lista para sortear!");
+    return;
+  }
+
+  let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+  let amigoSorteado = amigos[indiceAleatorio];
+
+  mostrarResultado(amigoSorteado);
+}
+
+function mostrarResultado(nombre) {
+  let listaResultados = document.getElementById("resultado");
+  listaResultados.innerHTML = ""; // Limpia la lista antes de volver a generarla.
+
+  let li = document.createElement("li");
+  li.textContent = `El amigo secreto es: ${nombre}`;
+  listaResultados.appendChild(li);
 }
