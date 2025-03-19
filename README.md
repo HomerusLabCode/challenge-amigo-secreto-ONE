@@ -44,9 +44,9 @@ El proyecto se basa en **HTML, CSS y JavaScript** para ofrecer una interfaz inte
 
 ---
 
-## 🎨 Captura de Pantalla (Opcional)
+## 🎨 Captura de Pantalla
 
-> Puedes agregar aquí una imagen de la interfaz para mostrar cómo luce la aplicación.
+![captura de pantalla de la aplicación](assets/captura-pantalla.png)
 
 ---
 
@@ -66,7 +66,7 @@ El proyecto se basa en **HTML, CSS y JavaScript** para ofrecer una interfaz inte
 
 ---
 
-## 🏆 Próximas Mejoras (Opcional)
+## 🏆 Próximas Mejoras
 
 🔹 Agregar animaciones para el sorteo.  
 🔹 Posibilidad de exportar la lista de nombres.  
