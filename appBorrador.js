@@ -11,3 +11,35 @@
 // Realizar el sorteo aleatorio, asegurándose de que nadie se asigne a sí mismo.
 // Mostrar el resultado del sorteo en la página.
 // Agregar un botón que permita reiniciar el sorteo.
+let amigos = [];
+
+function agregarAmigo() {
+  let input = document.getElementById("amigo");
+  let nombre = input.value.trim(); // Elimina los espacios en blanco al inicio y al final
+
+  if (nombre === "") {
+    alert("El nombre no puede estar vacío");
+    return;
+  }
+
+  if (amigos.includes(nombre)) {
+    alert("El nombre ya está en la lista");
+    return;
+  }
+
+  amigos.push(nombre);
+  input.value = ""; // Limpia el campo después de agregar el nombre.
+
+  actualizarListaAmigos();
+}
+
+function actualizarListaAmigos() {
+  let lista = document.getElementById("listaAmigos");
+  lista.innerHTML = ""; // Limpia la lista antes de volver a generarla.
+
+  amigos.forEach((nombre) => {
+    let li = document.createElement("li");
+    li.textContent = nombre;
+    lista.appendChild(li);
+  });
+}
