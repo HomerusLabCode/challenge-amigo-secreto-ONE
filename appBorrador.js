@@ -43,13 +43,28 @@ function agregarAmigo() {
 
 function actualizarListaAmigos() {
   let lista = document.getElementById("listaAmigos");
-  lista.innerHTML = ""; // Limpia la lista antes de volver a generarla.
+  lista.innerHTML = ""; // Limpiar la lista antes de actualizarla
 
-  amigos.forEach((nombre) => {
-    let li = document.createElement("li");
-    li.textContent = nombre;
-    lista.appendChild(li);
+  amigos.forEach((nombre, index) => {
+    let listItem = document.createElement("li");
+    listItem.textContent = nombre;
+
+    // Crear botón de eliminar
+    let botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "❌";
+    botonEliminar.classList.add("delete-button");
+    botonEliminar.onclick = function () {
+      eliminarAmigo(index);
+    };
+
+    listItem.appendChild(botonEliminar); // Agregar el botón al elemento de la lista
+    lista.appendChild(listItem); // Agregar el elemento a la lista
   });
+}
+
+function eliminarAmigo(index) {
+  amigos.splice(index, 1); // Elimina el nombre de la lista
+  actualizarListaAmigos(); // Actualiza la lista en la interfaz
 }
 
 function sortearAmigo() {
