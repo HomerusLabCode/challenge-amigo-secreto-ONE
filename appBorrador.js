@@ -1,7 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-// Deberás crear una función llamada "calculateWinner" que reciba como parámetro un array de 3 strings, cada uno representando una fila de un tablero de 3x3.
-// El tablero de 3x3 se representa de la siguiente forma:   0 1 2   3 4 5   6 7 8
-// La función deberá retornar un string con el nombre del ganador. En caso de no haber ganador, deberá retornar "Empate".
+// Para este desafío, deberás crear una aplicación que permita realizar un sorteo de amigo secreto. La aplicación deberá tener las siguientes funcionalidades:
+// Permitir a los usuarios ingresar nombres de amigos.
+// La función deberá retornar un string con el nombre del ganador.
 // Agregar nombres a la lista de amigos cuando el usuario presione el botón "Añadir".
 // El nombre debe ser añadido a la lista de amigos y no debe ser vacío.
 // Mostrar la lista de nombres en la página.
@@ -71,4 +71,10 @@ function mostrarResultado(nombre) {
   let li = document.createElement("li");
   li.textContent = `El amigo secreto es: ${nombre}`;
   listaResultados.appendChild(li);
+}
+
+function resetearSorteo() {
+  amigos = []; // Vacía la lista de amigos
+  document.getElementById("listaAmigos").innerHTML = ""; // Borra los nombres de la interfaz
+  document.getElementById("resultado").innerHTML = ""; // Borra el resultado del sorteo
 }
